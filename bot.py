@@ -1,4 +1,5 @@
 import telebot
+from telebot.apihelper import ApiTelegramException
 from telebot import types
 from urllib.request import urlopen
 import os
@@ -29,10 +30,28 @@ connection.commit()
 app = FaceAnalysis(name="buffalo_l", providers=['CPUExecutionProvider'])
 app.prepare(ctx_id=0, det_size=(256,256))
 
-TOKEN = '7901409888:AAFG-QodKrPQwZVi_Ls87eOk3hTrFkR6zBU'
+def get_valid_token():
+    '''Ввод токена и проверка его на корректность'''
+    while True:
+        try:
+            token = input("Введите токен для Телеграм-бота:").strip()
+            bot = telebot.TeleBot(token=token)
+            bot.get_me()
+            print("Бот успешно создан!")
+            return bot
+        except ApiTelegramException as exc:
+            if "401" in str(exc):
+                print("Ошибка: Неверный токен. Попробуйте снова.")
+            else:
+                print(f"Произошла ошибка: {exc}")
+        except Exception as exc:
+            print(f"Неизвестная ошибка: {exc}")
 
-# Создаем экземпляр бота
-bot = telebot.TeleBot(token=TOKEN)
+
+
+
+bot = get_valid_token()
+
 
 print('Бот запущен')
 

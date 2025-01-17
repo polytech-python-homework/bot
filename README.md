@@ -16,7 +16,8 @@
 - https://habr.com/ru/articles/754400/ (sqlite3)
 
 ## Демонстрация работы Telegram-бота:
-Запустим бота (@facerecognitionsystem_bot) и отправим две фотографии:
+
+Для запуска приложения выполните команды, описанные в файле load_the_app.txt. Затем при запуске программы необходимо будет ввести телеграм токен в консоль. После чего воспользоваться ботом.
 
 <img src="https://github.com/user-attachments/assets/27f3f1a3-736d-4849-8daa-a7c59d5af169" height="500">
 

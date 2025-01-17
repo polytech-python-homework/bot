@@ -16,7 +16,7 @@
 - https://habr.com/ru/articles/754400/ (sqlite3)
 
 ## Демонстрация работы Telegram-бота:
-Запустим бота и отправим две фотографии:
+Запустим бота (@facerecognitionsystem_bot) и отправим две фотографии:
 
 <img src="https://github.com/user-attachments/assets/27f3f1a3-736d-4849-8daa-a7c59d5af169" height="500">
 
